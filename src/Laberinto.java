@@ -11,6 +11,19 @@ public class Laberinto {
     public void paint(Graphics g) {
         }
     public int [][] obtieneLaberinto() {
+        if (Juego.obtieneNivel()==1) {
+            lab=Laberinto();    
+        }
+    public int [][] obtieneLaberinto() {
+        if (Juego.obtieneNivel()==2) {
+            lab=Laberinto();    
+        }
+    public int [][] obtieneLaberinto() {
+        if (Juego.obtieneNivel()==3) {
+            lab=Laberinto();    
+        }
+
+
         return lab;
     }
  }
