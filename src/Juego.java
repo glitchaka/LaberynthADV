@@ -1,10 +1,52 @@
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.Graphics;
 
 public class Juego extends JPanel{
+    Laberinto laberinto = new Laberinto();
+    Personaje personaje = new Personaje();
+    public static int nivel = 1;
 
-    public Juego(){}
+    public Juego(){
+        addKeyListener(new KeyListener(){
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                personaje.teclaPresionada(e);
+                
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // TODO Auto-generated method stub
+                
+            }
+            
+        });
+        setFocusable(true);
+    }
+    public void paint(Graphics g){
+        laberinto.paint(g);
+        personaje.paint(g);
+    }
+
+    public static int cambiaNivel(){
+        return nivel++;
+    }
+
+    public static int obtieneNivel(){
+        return nivel;
+    }
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(null, "Are you Ready?");
         JFrame frame = new JFrame("Mazerdrix");
@@ -22,8 +64,15 @@ public class Juego extends JPanel{
                 e.printStackTrace();
             }
             game.repaint();
+
+            if (obtieneNivel() >3) {
+                JOptionPane.showMessageDialog(null, "You Win!");
+                System.exit(0);
+            }
+                
+            }
         }
 
     }
     
-}
+

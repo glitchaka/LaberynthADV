@@ -11,7 +11,7 @@ public class Personaje {
     int movimientos = 40;
 
     public void paint(Graphics g) {
-        g.setColor(Color.RED)
+        g.setColor(Color.RED);
         g.fillOval(x, y, ancho, alto);
         g.setColor(Color.BLACK);
         g.drawOval(x, y, ancho, alto);
@@ -34,6 +34,32 @@ public class Personaje {
 
     public void teclaPresionada(KeyEvent event){ 
 
+        int [][]laberinto = maze.obtieneLaberinto();
+        if (event.getKeyCode()==37) {//IZQUIERDA
+            if(laberinto[y/40][(x/40)-1]!=1){
+                x-=movimientos;
+            }
+        }
+        if (event.getKeyCode()==39) {//DERECHA
+            if(laberinto[y/40][(x/40)+1]!=1){
+                x+=movimientos;
+            }
+        }
+        if (event.getKeyCode()==40) {//ABAJO
+            if(laberinto[(y/40)+1][x/40]!=1){
+                y+=movimientos;
+            }
+        }
+        if (event.getKeyCode()==38) {//ARRIBA
+            if(laberinto[y/40][(x/40)-1]!=1){
+                x-=movimientos;
+            }
+        }
+        if (x==840 && y==440) {
+            Juego.cambiaNivel();
+            x=40;
+            y=40;
+        }
     }
 
 }

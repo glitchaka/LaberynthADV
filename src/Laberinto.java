@@ -12,11 +12,13 @@ public class Laberinto {
         }
     public int [][] obtieneLaberinto() {
         if (Juego.obtieneNivel()==1) {
-            lab=Laberinto();    
+            lab=Laberinto();   
+            
+            if (Juego.obtieneNivel()==2) {
+            lab=Laberinto();   
         }
     public int [][] obtieneLaberinto() {
-        if (Juego.obtieneNivel()==2) {
-            lab=Laberinto();    
+         
         }
     public int [][] obtieneLaberinto() {
         if (Juego.obtieneNivel()==3) {
