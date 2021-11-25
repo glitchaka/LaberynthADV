@@ -36,6 +36,7 @@ public class Juego extends JPanel{
         setFocusable(true);
     }
     public void paint(Graphics g){
+        super.paintComponent(g);
         laberinto.paint(g);
         personaje.paint(g);
     }
@@ -63,7 +64,9 @@ public class Juego extends JPanel{
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            game.validate();
             game.repaint();
+            
 
             if (obtieneNivel() >3) {
                 JOptionPane.showMessageDialog(null, "You Win!");
