@@ -64,7 +64,7 @@ public class Juego extends JPanel{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            game.validate();
+            
             game.repaint();
             
 

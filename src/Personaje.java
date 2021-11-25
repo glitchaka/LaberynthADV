@@ -35,24 +35,24 @@ public class Personaje {
     public void teclaPresionada(KeyEvent event){ 
 
         int [][]laberinto = maze.obtieneLaberinto();
-        if (event.getKeyCode()==37) {//IZQUIERDA
+        if (event.getKeyCode()==72) {//IZQUIERDA
             if(laberinto[y/40][(x/40)-1]!=1){
                 x-=movimientos;
             }
         }
-        if (event.getKeyCode()==39) {//DERECHA
+        if (event.getKeyCode()==76) {//DERECHA
             if(laberinto[y/40][(x/40)+1]!=1){
                 x+=movimientos;
             }
         }
-        if (event.getKeyCode()==40) {//ABAJO
+        if (event.getKeyCode()==74) {//ABAJO
             if(laberinto[(y/40)+1][x/40]!=1){
                 y+=movimientos;
             }
         }
-        if (event.getKeyCode()==38) {//ARRIBA
-            if(laberinto[y/40][(x/40)-1]!=1){
-                x-=movimientos;
+        if (event.getKeyCode()==75) {//ARRIBA
+            if(laberinto[(y/40)-1][x/40]!=1){
+                y-=movimientos;
             }
         }
         if (x==840 && y==440) {
