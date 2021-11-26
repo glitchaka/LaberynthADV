@@ -4,8 +4,8 @@ public class Laberinto {
     int [][] lab = new int[13][23]; 
     int fila = 0;
     int columna = 0;
-    int numeroColumna = 13;
     int numeroFila = 13;
+    int numeroColumna = 23;
     int anchoBloque = 40;
     int altoBloque = 40;
 
@@ -19,7 +19,7 @@ public class Laberinto {
                     if(Juego.obtieneNivel()==2){g.setColor(Color.PINK);}
                     if(Juego.obtieneNivel()>=3){g.setColor(Color.MAGENTA);}
 
-                    g.fillRect(columna*anchoBloque,fila*altoBloque,anchoBloque,altoBloque);
+                    g.fillRect(columna*40,fila*40,anchoBloque,altoBloque);
                     g.setColor(Color.BLACK);
                     g.drawRect(columna*40,fila*40,anchoBloque,altoBloque);
                 } 
